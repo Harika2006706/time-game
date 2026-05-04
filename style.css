@@ -1,0 +1,166 @@
+/* 🌌 Base */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #2c5364);
+  color: white;
+  overflow: hidden;
+}
+
+/* 📱 App container */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* 🎮 Title */
+h1 {
+  margin: 10px 0;
+  font-size: clamp(20px, 4vw, 32px);
+}
+
+/* 📊 Info */
+.info {
+  font-size: clamp(16px, 3vw, 20px);
+}
+
+/* 🎚 Levels */
+.levels button {
+  margin: 5px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+/* 🎮 Controls */
+.controls {
+  margin: 10px;
+}
+
+.controls button {
+  margin: 5px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+/* 🎯 Game Area */
+#gameArea {
+  width: 100%;
+  max-width: 900px;
+  height: 60vh;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 📱 Bigger on mobile */
+@media (max-width: 600px) {
+  #gameArea {
+    height: 65vh;
+  }
+}
+
+/* 🎯 Target */
+#target {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  display: none;
+  cursor: pointer;
+  background: radial-gradient(circle, #ff4b2b, red);
+  box-shadow: 0 0 20px red;
+  touch-action: manipulation;
+}
+
+/* 💥 Explosion */
+.explode {
+  animation: explode 0.3s ease;
+}
+
+@keyframes explode {
+  50% { transform: scale(1.8); background: yellow; }
+}
+
+/* 🏆 Popup */
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.8);
+}
+
+.popup-content {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 15px;
+}
+.modes button {
+  margin: 5px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(0,255,255,0.2);
+  color: white;
+}
+/* 📱 Responsive Fixes */
+
+/* Smaller screens */
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .info {
+    font-size: 16px;
+  }
+
+  #gameArea {
+    height: 65vh;
+    width: 95%;
+  }
+
+  #target {
+    width: 70px;
+    height: 70px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px 14px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+
+  #gameArea {
+    height: 60vh;
+  }
+
+  #target {
+    width: 65px;
+    height: 65px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+}

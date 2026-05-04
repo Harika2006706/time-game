@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>🎯 Aim Trainer Pro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <h1>🎯 Aim Trainer Pro</h1>
+
+  <div class="info">
+    ⏱ <span id="time">30</span>s |
+    🎯 <span id="score">0</span>
+  </div>
+  <div class="modes">
+  <button onclick="setMode('classic')">Classic</button>
+  <button onclick="setMode('reaction')">Reaction</button>
+  <button onclick="setMode('precision')">Precision</button>
+  <button onclick="setMode('chaos')">Chaos</button>
+</div>
+
+  <!-- 🎚 Levels -->
+  <div class="levels">
+    <button onclick="setLevel('easy')">Easy</button>
+    <button onclick="setLevel('medium')">Medium</button>
+    <button onclick="setLevel('hard')">Hard</button>
+  </div>
+
+  <div class="controls">
+    <button id="startBtn">Start</button>
+    <button onclick="toggleFullscreen()">⛶ Fullscreen</button>
+  </div>
+
+  <!-- 🎯 Game -->
+  <div id="gameArea">
+    <div id="target"></div>
+  </div>
+
+  <p id="message"></p>
+
+</div>
+
+<!-- 🏆 Popup -->
+<div id="popup">
+  <div class="popup-content">
+    <h2>🏆 Game Over</h2>
+    <p>Your Score: <span id="finalScore"></span></p>
+    <button onclick="restartGame()">Play Again</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
